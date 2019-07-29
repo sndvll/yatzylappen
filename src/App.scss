@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+body {
+  background-color: lightgray;
+}
+.App {
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Poppins', sans-serif;
+  > h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+}
+
+button {
+  margin-top: 1rem;
+  background: lightblue;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: 0;
+  font-weight: 500;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px grey;
+}
+
+#protocol {
+  display: flex;
+}
+
+.players {
+  display: flex;
+  border-right: 2px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: white;
+}
+
+.combos {
+  border-left: 2px solid black;
+  border-top: 1px solid black;
+  background-color: white;
+  border-bottom: 1px solid black;
+}
+.edit-point {
+  display: flex;
+  position: fixed;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 87%;
+  top: 25vh;
+  left: 0.5rem;
+  justify-content: space-between;
+  transition: ease-in-out;
+  box-shadow: 1px 2px 5px grey;
+  > div.close {
+    text-align: right;
+    margin-bottom: 1rem;
+  }
+  > div.data {
+    width: 100%;
+    > div {
+      &.name {
+        font-weight: bolder;
+        text-align: left;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+      }
+      padding: 0.5rem;
+      > form {
+        > select {
+          display: marker;
+          width: 70%;
+          padding: .4rem .7rem;
+          font-size: 1rem;
+          color: black;
+          border-radius: .3rem;
+        }
+        > select {
+          background: lighten(lightgray, 10%);
+          border: 2px solid gray;
+        }
+      }
+    }
+  }
+
+}
+.cells {
+  > div {
+    min-width: 25px;
+    padding: 0.4rem;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    height: 20px;
+  }
+  > div.sum, div.name {
+    border-top: 2px solid black;
+    border-bottom: 1px solid black;
+  }
+  > div.total {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  > div.bonus {
+    border-bottom: 1px solid black;
+  }
+  > div.name, div.sum, div.total, div.bonus {
+    font-weight: bolder;
+  }
+}

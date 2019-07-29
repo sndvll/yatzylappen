@@ -1,33 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+body {
+  background-color: lightgray; }
+
 .App {
   text-align: center;
-}
+  padding: 1rem;
+  font-family: 'Poppins', sans-serif; }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
+.App > h2 {
+  font-family: 'Source Sans Pro', sans-serif; }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button {
+  margin-top: 1rem;
+  background: lightblue;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: 0;
+  font-weight: 500;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px grey; }
+
+#protocol {
+  display: flex; }
+
+.players {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+  border-right: 2px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: white; }
 
-.App-link {
-  color: #61dafb;
-}
+.combos {
+  border-left: 2px solid black;
+  border-top: 1px solid black;
+  background-color: white;
+  border-bottom: 1px solid black; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.edit-point {
+  display: flex;
+  position: fixed;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 87%;
+  top: 25vh;
+  left: 0.5rem;
+  justify-content: space-between;
+  transition: ease-in-out;
+  box-shadow: 1px 2px 5px grey; }
+
+.edit-point > div.close {
+  text-align: right;
+  margin-bottom: 1rem; }
+
+.edit-point > div.data {
+  width: 100%; }
+
+.edit-point > div.data > div {
+  padding: 0.5rem; }
+
+.edit-point > div.data > div.name {
+  font-weight: bolder;
+  text-align: left;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem; }
+
+.edit-point > div.data > div > form > select {
+  display: marker;
+  width: 70%;
+  padding: .4rem .7rem;
+  font-size: 1rem;
+  color: black;
+  border-radius: .3rem; }
+
+.edit-point > div.data > div > form > select {
+  background: #ededed;
+  border: 2px solid gray; }
+
+.cells > div {
+  min-width: 25px;
+  padding: 0.4rem;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  height: 20px; }
+
+.cells > div.sum, .cells div.name {
+  border-top: 2px solid black;
+  border-bottom: 1px solid black; }
+
+.cells > div.total {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black; }
+
+.cells > div.bonus {
+  border-bottom: 1px solid black; }
+
+.cells > div.name, .cells div.sum, .cells div.total, .cells div.bonus {
+  font-weight: bolder; }
