@@ -82,7 +82,7 @@ export class App extends Component {
         const players = Object.keys(this.state.players).map(key =>  <Player key={this.state.players[key].name + shortid.generate()} setPoint={this.handleSetPoint} setStrike={this.handleSetStrike} player={this.state.players[key]}/>);
         return (
             <div className="App">
-                <h2>Yatzy <FaDice /></h2>
+                <h2>YatzylAppen <FaDice /></h2>
                 <div id="protocol">
                     <Combos />
                     <div className="players">{players}</div>
