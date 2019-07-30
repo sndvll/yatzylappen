@@ -2,9 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export const Cell = (props) => {
-    return <div onClick={props.editValue} className={props.type ? props.type : ''}>{props.value}</div>
+    const type = props.type ? props.type : '';
+    const valid = props.valid ? ' ' + props.valid: '';
+    return <div onClick={props.editValue} className={type+valid}>{props.value}</div>
 };
 
 Cell.propTypes = {
-    editValue: PropTypes.func
+    editValue: PropTypes.func,
+    valid: PropTypes.string
 };

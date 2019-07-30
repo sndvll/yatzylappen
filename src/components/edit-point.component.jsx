@@ -27,6 +27,14 @@ export class EditPoint extends Component {
         this.props.close();
     };
 
+    setStrike = () => {
+        this.props.setStrike({
+            type: this.props.type,
+            player: this.props.player
+        });
+        this.props.close()
+    };
+
     render() {
         const values = possiblePoints(this.props.type).map(value => <option key={value} value={value}>{value}</option>);
         return (
@@ -39,6 +47,7 @@ export class EditPoint extends Component {
                             <select onChange={this.handleChange} id="value" value={this.state.value}>
                                 {values}
                             </select><br />
+                            <button type="button" className="strike" onClick={this.setStrike}>Stryk!</button><br />
                             <button type="submit">Spara</button>
                         </form>
                     </div>
@@ -52,5 +61,6 @@ export class EditPoint extends Component {
 }
 
 EditPoint.propTypes = {
-    pointChange: PropTypes.func
+    pointChange: PropTypes.func,
+    setStrike: PropTypes.func
 };

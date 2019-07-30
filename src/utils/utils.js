@@ -1,3 +1,4 @@
+
 export const getTypeString = (type) => {
     return {
         ones: 'Ettor',
@@ -42,7 +43,7 @@ export const possiblePoints = (type) => {
   return {
       ones: [0,1,2,3,4,5,6],
       twos: [0,2,4,6,8,10],
-      threes: [0,2,9,12,15,18],
+      threes: [0,3,6,9,12,15],
       fours: [0,4,8,12,16,20],
       fives: [0,5,10,15,20,25],
       sixes: [0,6,12,18,24,30],
@@ -58,28 +59,30 @@ export const possiblePoints = (type) => {
   }[type]
 };
 
+const newValue = () => ({value: 0, valid: 'pristine'});
+
 export const newPlayer = (name) => {
     return {
         name: name,
         points: {
             top: {
-                ones: 0,
-                twos: 0,
-                threes: 0,
-                fours: 0,
-                fives: 0,
-                sixes: 0,
+                ones: newValue(),
+                twos: newValue(),
+                threes: newValue(),
+                fours: newValue(),
+                fives: newValue(),
+                sixes: newValue(),
             },
             bottom: {
-                pair: 0,
-                twoPair: 0,
-                trips: 0,
-                fourOfAKind: 0,
-                fullHouse: 0,
-                smallStraight: 0,
-                largeStraight: 0,
-                chance: 0,
-                yatzy: 0
+                pair: newValue(),
+                twoPair: newValue(),
+                trips: newValue(),
+                fourOfAKind: newValue(),
+                fullHouse: newValue(),
+                smallStraight: newValue(),
+                largeStraight: newValue(),
+                chance: newValue(),
+                yatzy: newValue()
             }
         }
     }
