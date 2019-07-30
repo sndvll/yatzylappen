@@ -15,6 +15,9 @@ export class App extends Component {
     };
 
     handleSetPoint = (point) => {
+        if (point.value === 0) {
+            return;
+        }
         this.setState({
             history: this.state.players,
             showUndoButton: true,

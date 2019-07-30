@@ -6,7 +6,8 @@ body {
 .App {
   text-align: center;
   padding: 1rem;
-  font-family: 'Poppins', sans-serif; }
+  font-family: 'Poppins', sans-serif;
+  color: black; }
 
 .App > h2 {
   font-family: 'Source Sans Pro', sans-serif; }
@@ -25,7 +26,7 @@ button {
   border: 0;
   font-weight: 500;
   border-radius: 2px;
-  box-shadow: 1px 1px 1px grey; }
+  box-shadow: 1px 1px 1px gray; }
 
 button.strike {
   background-color: #D61A3C; }
@@ -50,6 +51,7 @@ button.strike {
 
 .edit-point {
   display: flex;
+  flex-direction: column;
   position: fixed;
   background-color: white;
   padding: 1rem;
@@ -59,11 +61,17 @@ button.strike {
   left: 0.5rem;
   justify-content: space-between;
   transition: ease-in-out;
-  box-shadow: 1px 2px 5px grey; }
+  box-shadow: 1px 2px 5px gray; }
 
-.edit-point > div.close {
-  text-align: right;
-  margin-bottom: 1rem; }
+.edit-point > div.header {
+  display: flex;
+  font-size: 1.2rem;
+  justify-content: space-between; }
+
+.edit-point > div.header > .name {
+  letter-spacing: 5px;
+  font-size: 1.8rem;
+  font-weight: bolder; }
 
 .edit-point > div.data {
   width: 100%; }
@@ -90,6 +98,11 @@ button.strike {
   background: #ededed;
   border: 2px solid gray; }
 
+.edit-point > div.data > div > form > .buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between; }
+
 .cells > div {
   min-width: 25px;
   padding: 0.4rem;
@@ -105,7 +118,7 @@ button.strike {
   background-color: lightgreen !important; }
 
 .cells > div.point.strike {
-  background-color: #D61A3C !important; }
+  background-color: #e73c5b !important; }
 
 .cells > div.sum, .cells div.name {
   border-top: 2px solid black;

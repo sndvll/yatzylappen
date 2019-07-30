@@ -1,13 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
+$background: lightgray;
+$font-color: black;
+$border: black;
+$protocol-bg: white;
+$edit-bg: white;
+$button-color: lightblue;
+$shade: gray;
+$strike: #D61A3C;
+
+$select-color: black;
+$select-bg: lighten(lightgray, 10%);
+$select-border: gray;
+
+$valid-bg: lightgreen;
+$strike-bg: lighten($strike, 10%);
+
 body {
-  background-color: lightgray;
+  background-color: $background;
 }
 .App {
   text-align: center;
   padding: 1rem;
   font-family: 'Poppins', sans-serif;
+  color: $font-color;
   > h2 {
     font-family: 'Source Sans Pro', sans-serif;
   }
@@ -21,15 +38,15 @@ body {
 
 button {
   margin-top: 1rem;
-  background: lightblue;
+  background: $button-color;
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   border: 0;
   font-weight: 500;
   border-radius: 2px;
-  box-shadow: 1px 1px 1px grey;
+  box-shadow: 1px 1px 1px $shade;
   &.strike {
-    background-color: #D61A3C;
+    background-color: $strike;
   }
 }
 
@@ -39,24 +56,25 @@ button {
 
 .players {
   display: flex;
-  border-right: 2px solid black;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
-  background-color: white;
+  border-right: 2px solid $border;
+  border-top: 1px solid $border;
+  border-bottom: 1px solid $border;
+  background-color: $protocol-bg;
 }
 
 .combos {
-  border-left: 2px solid black;
-  border-top: 1px solid black;
-  background-color: white;
-  border-bottom: 1px solid black;
+  border-left: 2px solid $border;
+  border-top: 1px solid $border;
+  background-color: $protocol-bg;
+  border-bottom: 1px solid $border;
   width: 100px;
   font-size: 0.9rem;
 }
 .edit-point {
   display: flex;
+  flex-direction: column;
   position: fixed;
-  background-color: white;
+  background-color: $edit-bg;
   padding: 1rem;
   border-radius: 5px;
   width: 87%;
@@ -64,10 +82,16 @@ button {
   left: 0.5rem;
   justify-content: space-between;
   transition: ease-in-out;
-  box-shadow: 1px 2px 5px grey;
-  > div.close {
-    text-align: right;
-    margin-bottom: 1rem;
+  box-shadow: 1px 2px 5px $shade;
+  > div.header {
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: space-between;
+    > .name {
+      letter-spacing: 5px;
+      font-size: 1.8rem;
+      font-weight: bolder;
+    }
   }
   > div.data {
     width: 100%;
@@ -86,12 +110,17 @@ button {
           width: 70%;
           padding: .4rem .7rem;
           font-size: 1rem;
-          color: black;
+          color: $select-color;
           border-radius: .3rem;
         }
         > select {
-          background: lighten(lightgray, 10%);
-          border: 2px solid gray;
+          background: $select-bg;
+          border: 2px solid $select-border;
+        }
+        > .buttons {
+          margin-top: 1.5rem;
+          display: flex;
+          justify-content: space-between;
         }
       }
     }
@@ -102,20 +131,20 @@ button {
   > div {
     min-width: 25px;
     padding: 0.4rem;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    border-top: 1px solid black;
+    border-left: 1px solid $border;
+    border-right: 1px solid $border;
+    border-top: 1px solid $border;
     height: 20px;
   }
   > div.point {
     &.pristine {
-      background-color: white !important;
+      background-color: $protocol-bg !important;
     }
     &.valid {
-      background-color: lightgreen !important;
+      background-color: $valid-bg !important;
     }
     &.strike {
-      background-color: #D61A3C !important;
+      background-color: $strike-bg !important;
     }
   }
   > div.sum, div.name {
@@ -129,10 +158,10 @@ button {
   > div.bonus {
     border-bottom: 1px solid black;
     &.pristine {
-      background-color: white !important;
+      background-color: $protocol-bg !important;
     }
     &.valid {
-      background-color: lightgreen !important;
+      background-color: $valid-bg !important;
     }
   }
   > div.name, div.sum, div.total, div.bonus {

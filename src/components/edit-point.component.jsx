@@ -39,21 +39,23 @@ export class EditPoint extends Component {
         const values = possiblePoints(this.props.type).map(value => <option key={value} value={value}>{value}</option>);
         return (
             <div className="edit-point">
-                <div className="data">
+                <div className="header">
                     <div className="name">{this.props.player}</div>
+                    <FaTimesCircle onClick={this.props.close} />
+                </div>
+                <div className="data">
                     <div style={{'fontSize': '1.5em'}}>{getTypeString(this.props.type)}</div>
                     <div>
                         <form onSubmit={this.handleSubmit}>
                             <select onChange={this.handleChange} id="value" value={this.state.value}>
                                 {values}
-                            </select><br />
-                            <button type="button" className="strike" onClick={this.setStrike}>Stryk!</button><br />
+                            </select>
+                            <div className="buttons">
+                            <button type="button" className="strike" onClick={this.setStrike}>Stryk!</button>
                             <button type="submit">Spara</button>
+                            </div>
                         </form>
                     </div>
-                </div>
-                <div className="close" >
-                    <FaTimesCircle onClick={this.props.close} />
                 </div>
             </div>
         )
