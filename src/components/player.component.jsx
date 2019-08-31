@@ -22,7 +22,7 @@ export class Player extends Component {
         const topSum = Object.values(top).reduce((total, current) => {
             return { value: total.value + current.value };
         });
-        const bonus = topSum.value > 63 ? 50 : 0;
+        const bonus = topSum.value > 62 ? 50 : 0;
         const bonusClasses = bonus === 50 ? 'valid' : 'pristine';
         const bottomSum = Object.values(bottom).reduce((total, current) => {
             return { value: total.value + current.value };
